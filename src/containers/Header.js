@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { CartIcon } from '../component/CartIcon'
+import { ShopIcon } from '../component/ShopIcon'
 
 const Container = styled.div`
   display: flex;
@@ -14,12 +14,12 @@ const Title = styled.h1`
   font-weight: 300;
 `
 
-const CartContainer = styled.div`
+const ShopContainer = styled.div`
   display: flex;
   align-items: center;
 `
 
-const ShoppingBag = styled.span`
+const ShoppingTitle = styled.span`
   font-weight: 300;
   margin-top: 5px;
   font-size: 0.9em;
@@ -28,9 +28,9 @@ const ShoppingBag = styled.span`
 export const Header = () => (
   <Container>
     <Title>Kelisto Shop</Title>
-    <CartContainer>
-      <CartIcon />
-      <ShoppingBag>Shopping bag</ShoppingBag>
-    </CartContainer>
+    <ShopContainer>
+      <ShopIcon />
+      <ShoppingTitle>Shopping bag</ShoppingTitle>
+    </ShopContainer>
   </Container>
 )

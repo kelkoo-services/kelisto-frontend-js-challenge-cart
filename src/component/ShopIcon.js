@@ -24,7 +24,7 @@ const ItemCountContainer = styled.span`
   bottom: 12px;
 `
 
-export const CartIcon = () => (
+export const ShopIcon = () => (
 <Container>
 <ShoppingIcon />
 <ItemCountContainer>1</ItemCountContainer>
