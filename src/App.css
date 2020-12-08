@@ -1,0 +1,154 @@
+html,
+body,
+#root {
+  height: 100%;
+  background: #e63131;
+}
+.App {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100%;
+}
+.App .container {
+  padding: 20px;
+}
+.App .products {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 70%;
+  justify-content: space-between;
+  height: 80vh;
+}
+.App .products .product {
+  flex: 1 1 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  height: 250px;
+  width: 250px;
+}
+@media screen and (max-width: 1640px) {
+  .App .products .product {
+    height: auto;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .App .products .product {
+    flex: 1 1 25%;
+  }
+}
+@media screen and (max-width: 769px) {
+  .App .products .product {
+    flex: 1 1 100%;
+  }
+}
+.App .products .product img {
+  background-size: contain;
+  background-position: center center;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+.App .products .product p {
+  font-size: 15px;
+  margin: 0;
+}
+.App .products .product p .sku {
+  font-size: 12px;
+}
+.App .products .product button {
+  border: none;
+  outline: none;
+  background-color: #e63131;
+  color: #ffffff;
+  padding: 10px;
+  font-weight: 900;
+  border-radius: 5px;
+}
+.App .products .product button:hover {
+  background-color: #cb1919;
+  cursor: pointer;
+}
+.App .basket {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  height: 20%;
+  align-items: flex-end;
+}
+.App .basket button {
+  height: fit-content;
+  padding: 20px;
+  width: 400px;
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 900;
+}
+.App .basket button:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+.App .hide {
+  width: 500px;
+  left: -500px;
+  transition: all 0.5s;
+  position: absolute;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #ffffffe3;
+  display: flex;
+  flex-direction: column;
+}
+.App .hide .cart-items {
+  overflow: scroll;
+}
+@media screen and (max-width: 769px) {
+  .App .hide {
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+  }
+}
+.App .show {
+  position: absolute;
+  left: 0;
+  width: 500px;
+}
+@media screen and (max-width: 769px) {
+  .App .show {
+    bottom: -40%;
+    width: 100%;
+    position: fixed;
+  }
+}
+.App .cart-items .item {
+  display: flex;
+  border-bottom: black 1px solid;
+}
+.App .cart-items .item img {
+  height: 100px;
+}
+.App .cart-items .item .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.App .cart-items .item .add-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.App .cart-items .item .add-more button {
+  height: 100%;
+  background-color: transparent;
+  border: transparent;
+}
