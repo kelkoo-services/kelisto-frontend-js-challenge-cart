@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+import CartContainer from '../components/CartContainer';
 
 const Cart = () => {
   return (
     <>
       <Header />
-      <div className="bg-blue-200">
-        Cart
-      </div>
+      <CartContainer />
+      <Footer />
     </>
   );
 }
