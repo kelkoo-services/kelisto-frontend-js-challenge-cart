@@ -6,12 +6,12 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px;
+  margin: 20px 40px;
 `
 
 const Title = styled.h1`
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 400;
 `
 
 const ShopContainer = styled.div`

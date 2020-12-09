@@ -1,6 +1,10 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { Header } from './Header'
+
+import products from '../data/products.json'
+import { ShopList } from './ShopList'
 
 const Container = styled.div`
   display: flex;
@@ -15,9 +19,16 @@ const Container = styled.div`
 `
 
 export const Home = () => {
+  const [shopData, setShopData] = useState([])
+
+  useEffect(() => {
+    setShopData(products)
+  }, [])
+
   return (
     <Container>
       <Header />
+      <ShopList list={shopData} />
     </Container>
   )
 }
