@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addItemToCart } from '../store/actions/shop';
+import { addProductToCart } from '../store/actions/cart';
 
-const ItemCard = ({ item }) => {
-  const { productId, image, title, sku, price } = item;
+const ProductCard = ({ product }) => {
+  const { productId, image, title, sku, price } = product;
   const dispatch = useDispatch();
 
   return (
@@ -24,7 +24,7 @@ const ItemCard = ({ item }) => {
         </div>
       </div>
 
-      <div className="bg-red-300 w-full flex justify-center py-4 cursor-pointer" onClick={() => dispatch(addItemToCart(productId))}>
+      <div className="bg-red-300 w-full flex justify-center py-4 cursor-pointer" onClick={() => dispatch(addProductToCart(product))}>
         Add to Basket
       </div>
 
@@ -32,4 +32,4 @@ const ItemCard = ({ item }) => {
   );
 }
 
-export default ItemCard;
+export default ProductCard;

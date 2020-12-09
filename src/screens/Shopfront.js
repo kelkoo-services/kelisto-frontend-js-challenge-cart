@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Header from '../components/Header';
-import ItemContainer from '../components/ItemContainer';
-import { fetchItems } from '../store/actions/shop';
+import ProductContainer from '../components/ProductContainer';
+import { fetchProducts } from '../store/actions/products';
 
 const Shopfront = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchItems());
+    dispatch(fetchProducts());
   }, [dispatch]);
 
   return (
     <>
       <Header />
-      <ItemContainer />
+      <ProductContainer />
     </>
   );
 }
