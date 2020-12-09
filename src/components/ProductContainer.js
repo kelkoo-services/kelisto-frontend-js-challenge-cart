@@ -6,7 +6,7 @@ const ProductContainer = () => {
   const productList = useSelector(state => state.products.list);
 
   return (
-    <ul className="bg-blue-200 w-full flex flex-wrap justify-center">
+    <ul className="w-full flex flex-wrap justify-center mt-24 mb-10">
       {productList.map(product => <li key={product.productId}><ProductCard product={product} /></li>)}
     </ul>
   );

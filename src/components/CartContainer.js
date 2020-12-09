@@ -27,7 +27,7 @@ const CartContainer = () => {
 
   if (Object.keys(addedProducts).length < 1) {
     return (
-      <p>
+      <p className="my-8 mt-24">
         Your car is empty. Please
         <span className="cursor-pointer text-blue-500" onClick={() => history.goBack()}> go back </span>
         and try adding some products.
@@ -36,16 +36,16 @@ const CartContainer = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col flex-grow items-center w-full px-20 max-w-screen-xl mt-24">
       <CartActionsRow />
-      <ul className="bg-blue-200 flex flex-col w-full px-10 justify-center">
+      <ul className="w-full bg-white shadow-md rounded-md">
         <li key={"cartHeader"}><CartHeader /></li>
         {serveCartProducts(addedProducts)}
       </ul>
-      <div className="flex justify-end w-full">
-        Total: {serveCartTotal()}
+      <div className="flex justify-end w-full bg-white mt-2 shadow-md rounded-md mb-10">
+        <span className="text-lg font-bold py-2 px-8">Total: {serveCartTotal()}</span>
       </div>
-    </>
+    </div>
   );
 }
 

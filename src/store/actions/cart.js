@@ -20,7 +20,6 @@ export const addProductToCart = product => (dispatch, getState) => {
   dispatch({ type: ADD_PRODUCT_TO_CART, payload: addedProducts })
 }
 
-
 export const removeProductFromCart = productId => (dispatch, getState) => {
   const { addedProducts } = getState().cart;
   if (addedProducts[productId]) {

@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Btn = ({ children, action }) => {
+const Btn = ({ children, action, type }) => {
   return (
-    <div className="bg-blue-300 py-2 px-4 cursor-pointer mx-2" onClick={action}>
-      {children}
-    </div>
+    <div
+      className={`${type === 'secondary' ? 'btn btn-secondary' : 'btn btn-primary'} flex items-center justify-center`}
+      onClick={action}
+    >
+      { children}
+    </div >
   );
 }
 

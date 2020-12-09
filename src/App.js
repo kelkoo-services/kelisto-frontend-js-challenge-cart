@@ -8,7 +8,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="flex flex-col items-center flex-1 w-full">
+        <div className="flex flex-col items-center w-full h-screen">
           <Switch>
             <Route exact path="/" component={Shopfront} />
             <Route path="/cart" component={Cart} />

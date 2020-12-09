@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="bg-red-300 flex justify-center items-center w-full py-4 px-8 mb-8">
-      <div>[LOGO]</div>
+    <div className="bg-custom-purple text-white flex justify-center items-center w-full py-6 px-8 mt-8">
+      <Link to='/'>
+        <img alt="Kelisto Logo" className="h-6 w-auto" src="/assets/kelisto-logo.png" />
+      </Link>
     </div>
   );
 }

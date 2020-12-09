@@ -2,6 +2,7 @@ import React from 'react';
 import Btn from './Btn';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import IconBasket from './icons/IconBasket';
 
 const Header = () => {
   const addedProducts = useSelector(state => state.cart.addedProducts);
@@ -15,10 +16,18 @@ const Header = () => {
   }
 
   return (
-    <div className="bg-red-300 flex justify-between items-center w-full py-4 px-8 mb-8">
-      <div>[LOGO]</div>
-      <Link to='/'>Kelisto JS Challenge</Link>
-      <Btn><Link to='/cart'>Cart ({serveCartCount()})</Link></Btn>
+    <div className="bg-custom-purple text-white fixed flex justify-between items-center w-full py-4 px-8 mb-8">
+      <Link to='/'>
+        <img alt="Kelisto Logo" className="h-6 w-auto" src="/assets/kelisto-logo.png" />
+      </Link>
+      <Link to='/'><h1 className="text-xl font-semibold">Kelisto JS Challenge</h1></Link>
+      <div>
+        <Btn type={'secondary'}>
+          <div className="mr-2"><IconBasket /></div>
+          <Link to='/cart'>Cart ({serveCartCount()})</Link>
+        </Btn>
+      </div>
+
     </div>
   );
 }
