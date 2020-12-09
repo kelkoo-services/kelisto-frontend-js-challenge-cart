@@ -1,11 +1,11 @@
-export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
-export const REMOVE_PRODUCT_FROM_CART = 'ADD_PRODUCT_TO_CART';
-export const REMOVE_ALL_PRODUCTS_FROM_CART = 'REMOVE_ALL_PRODUCTS_FROM_CART';
-export const CLEAR_CART = 'CLEAR_CART';
+export const ADD_PRODUCT_TO_BASKET = 'ADD_PRODUCT_TO_BASKET';
+export const REMOVE_PRODUCT_FROM_BASKET = 'ADD_PRODUCT_TO_BASKET';
+export const REMOVE_ALL_PRODUCTS_FROM_BASKET = 'REMOVE_ALL_PRODUCTS_FROM_BASKET';
+export const CLEAR_BASKET = 'CLEAR_BASKET';
 
 
-export const addProductToCart = product => (dispatch, getState) => {
-  const { addedProducts } = getState().cart;
+export const addProductToBasket = product => (dispatch, getState) => {
+  const { addedProducts } = getState().basket;
   if (addedProducts[product.productId]) {
     let updatedProduct = { ...product };
     updatedProduct.amount = addedProducts[product.productId].amount + 1;
@@ -17,11 +17,11 @@ export const addProductToCart = product => (dispatch, getState) => {
     newProduct.totalPrice = newProduct.price * 1;
     addedProducts[product.productId] = newProduct;
   }
-  dispatch({ type: ADD_PRODUCT_TO_CART, payload: addedProducts })
+  dispatch({ type: ADD_PRODUCT_TO_BASKET, payload: addedProducts })
 }
 
-export const removeProductFromCart = productId => (dispatch, getState) => {
-  const { addedProducts } = getState().cart;
+export const removeProductFromBasket = productId => (dispatch, getState) => {
+  const { addedProducts } = getState().basket;
   if (addedProducts[productId]) {
     if (addedProducts[productId].amount > 1) {
       addedProducts[productId].amount--;
@@ -29,19 +29,19 @@ export const removeProductFromCart = productId => (dispatch, getState) => {
     } else {
       delete addedProducts[productId];
     }
-    dispatch({ type: REMOVE_PRODUCT_FROM_CART, payload: addedProducts })
+    dispatch({ type: REMOVE_PRODUCT_FROM_BASKET, payload: addedProducts })
   }
 }
 
 //remove all products with specific productId
-export const removeAllProductsFromCart = productId => (dispatch, getState) => {
-  const { addedProducts } = getState().cart;
+export const removeAllProductsFromBasket = productId => (dispatch, getState) => {
+  const { addedProducts } = getState().basket;
   if (addedProducts[productId]) {
     delete addedProducts[productId]
-    dispatch({ type: REMOVE_ALL_PRODUCTS_FROM_CART, payload: addedProducts })
+    dispatch({ type: REMOVE_ALL_PRODUCTS_FROM_BASKET, payload: addedProducts })
   };
 }
 
-export const clearCart = () => dispatch => {
-  dispatch({ type: CLEAR_CART })
+export const clearBasket = () => dispatch => {
+  dispatch({ type: CLEAR_BASKET })
 }

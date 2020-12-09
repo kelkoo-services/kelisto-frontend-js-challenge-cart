@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import Shopfront from './screens/Shopfront';
-import Cart from './screens/Cart';
+import Basket from './screens/Basket';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <div className="flex flex-col items-center w-full h-screen">
           <Switch>
             <Route exact path="/" component={Shopfront} />
-            <Route path="/cart" component={Cart} />
+            <Route path="/basket" component={Basket} />
           </Switch>
         </div>
       </Router>

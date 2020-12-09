@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 import IconBasket from './icons/IconBasket';
 
 const Header = () => {
-  const addedProducts = useSelector(state => state.cart.addedProducts);
+  const addedProducts = useSelector(state => state.basket.addedProducts);
 
-  const serveCartCount = () => {
+  const serveBasketCount = () => {
     let count = 0;
     for (const productId in addedProducts) {
       count += addedProducts[productId].amount;
@@ -24,7 +24,7 @@ const Header = () => {
       <div>
         <Btn type={'secondary'}>
           <div className="mr-2"><IconBasket /></div>
-          <Link to='/cart'>Cart ({serveCartCount()})</Link>
+          <Link to='/basket'>Basket ({serveBasketCount()})</Link>
         </Btn>
       </div>
 

@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CartContainer from '../components/CartContainer';
+import BasketContainer from '../components/BasketContainer';
 
-const Cart = () => {
+const Basket = () => {
   return (
     <>
       <Header />
-      <CartContainer />
+      <BasketContainer />
       <Footer />
     </>
   );
 }
 
-export default Cart;
+export default Basket;

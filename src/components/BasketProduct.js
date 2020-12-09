@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addProductToCart, removeProductFromCart, removeAllProductsFromCart } from '../store/actions/cart';
+import { addProductToBasket, removeProductFromBasket, removeAllProductsFromBasket } from '../store/actions/basket';
 
-const CartProduct = ({ product }) => {
+const BasketProduct = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
@@ -17,9 +17,9 @@ const CartProduct = ({ product }) => {
         <div className="flex items-center">
           <span className="sku">{product.sku}</span>
           <div>
-            <span className="ml-2 action-text" onClick={() => dispatch(addProductToCart(product))}>Add one</span>
-            <span className="ml-2 action-text" onClick={() => dispatch(removeProductFromCart(product.productId))}>Remove one</span>
-            <span className="ml-2 action-text" onClick={() => dispatch(removeAllProductsFromCart(product.productId))}>Remove all</span>
+            <span className="ml-2 action-text" onClick={() => dispatch(addProductToBasket(product))}>Add one</span>
+            <span className="ml-2 action-text" onClick={() => dispatch(removeProductFromBasket(product.productId))}>Remove one</span>
+            <span className="ml-2 action-text" onClick={() => dispatch(removeAllProductsFromBasket(product.productId))}>Remove all</span>
           </div>
         </div>
       </div>
@@ -33,4 +33,4 @@ const CartProduct = ({ product }) => {
   );
 }
 
-export default CartProduct;
+export default BasketProduct;

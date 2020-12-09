@@ -2,19 +2,19 @@ import React from 'react';
 import Btn from './Btn';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { clearCart } from '../store/actions/cart';
+import { clearBasket } from '../store/actions/basket';
 import IconBack from './icons/IconBack';
 import IconTrash from './icons/IconTrash';
 import IconCheck from './icons/IconCheck';
 
-const CartActionsRow = () => {
+const BasketActionsRow = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
   const handlePlaceOrder = () => {
     alert('Order Placed. Thanks!');
     history.push('/');
-    dispatch(clearCart());
+    dispatch(clearBasket());
   }
 
   return (
@@ -27,9 +27,9 @@ const CartActionsRow = () => {
             </Btn>
         </div>
         <div>
-          <Btn action={() => dispatch(clearCart())}>
+          <Btn action={() => dispatch(clearBasket())}>
             <div className="mr-2"><IconTrash /></div>
-            Clear Cart
+            Clear Basket
             </Btn>
         </div>
       </div>
@@ -43,4 +43,4 @@ const CartActionsRow = () => {
   );
 }
 
-export default CartActionsRow;
+export default BasketActionsRow;

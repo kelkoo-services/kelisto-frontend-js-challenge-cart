@@ -1,14 +1,14 @@
 import React from 'react';
 import Btn from './Btn';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProductToCart } from '../store/actions/cart';
+import { addProductToBasket } from '../store/actions/basket';
 import ReactTooltip from 'react-tooltip';
 import IconBasket from './icons/IconBasket';
 
 const ProductCard = ({ product }) => {
   const { productId, image, title, sku, price, description } = product;
   const dispatch = useDispatch();
-  const { addedProducts } = useSelector(state => state.cart);
+  const { addedProducts } = useSelector(state => state.basket);
 
   return (
     <div className="bg-white shadow-md rounded-md flex flex-col items-center w-80 p-6 m-4">
@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      <Btn action={() => dispatch(addProductToCart(product))}>
+      <Btn action={() => dispatch(addProductToBasket(product))}>
         <div className="mr-2"><IconBasket /></div>
         <div>
           Add to Basket {addedProducts[productId] ? <span className="text-sm ml-2">({addedProducts[productId].amount})</span> : null}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartHeader = () => {
+const BasketHeader = () => {
   return (
     <div className="flex px-4 py-3">
 
@@ -21,4 +21,4 @@ const CartHeader = () => {
   );
 }
 
-export default CartHeader;
+export default BasketHeader;
