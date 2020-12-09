@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
+
+import { addItem } from '../redux/bag/bag.actions'
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +20,7 @@ const ImageContainer = styled.div`
   justify-content: center;
 
   :hover {
-    opacity: 0.8;
+    opacity: 0.7;
 
     button {
       display: flex;
@@ -48,9 +51,10 @@ const Title = styled.span`
 const Sku = styled.span`
   display: flex;
   align-items: center;
+  font-weight: 300;
 
   p {
-    font-weight: 500;
+    font-weight: 600;
     margin: 5px 5px 5px 0;
   }
 `
@@ -58,11 +62,11 @@ const Sku = styled.span`
 const Price = styled.span`
   font-size: 1.2em;
   margin-top: 5px;
+  font-weight: 600;
 `
 
 const AddButton = styled.button`
   width: 60%;
-  opacity: 0.8;
   position: absolute;
   top: 170px;
   height: 2.5rem;
@@ -75,21 +79,26 @@ const AddButton = styled.button`
   justify-content: center;
   background-color: white;
   color: black;
+  outline: none;
 
   :hover {
     background-color: black;
     color: white;
+    opacity: 0.85;
   }
 `
 
 export const ShopItem = ({ item }) => {
   const { title, sku, price, image } = item
+  const dispatch = useDispatch()
 
   return (
     <Container>
       <ImageContainer>
         <BackgroundImage img={image} />
-        <AddButton>add to bag</AddButton>
+        <AddButton onClick={() => dispatch(addItem(item))}>
+          add to bag
+        </AddButton>
       </ImageContainer>
       <FooterContainer>
         <Title>{title}</Title>

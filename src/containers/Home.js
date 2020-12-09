@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { Header } from './Header'
+import { ShopList } from './ShopList'
 
 import products from '../data/products.json'
-import { ShopList } from './ShopList'
 
 const Container = styled.div`
   display: flex;

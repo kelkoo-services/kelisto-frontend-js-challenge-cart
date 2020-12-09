@@ -1,0 +1,6 @@
+export const BagActionTypes = {
+  TOGGLE_BAG_HIDDEN: 'TOGGLE_BAG_HIDDEN',
+  ADD_ITEM: 'ADD_ITEM',
+  REMOVE_ITEM: 'REMOVE_ITEM',
+  CLEAR_BAG: 'CLEAR_BAG'
+}

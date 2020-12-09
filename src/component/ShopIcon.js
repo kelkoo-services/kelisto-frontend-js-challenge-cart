@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+
+import { selectBagItemsCount } from '../redux/bag/bag.selectors'
 
 import { ReactComponent as ShoppingIconSVG } from '../data/assets/shopping-bag.svg'
 
@@ -24,9 +27,13 @@ const ItemCountContainer = styled.span`
   bottom: 12px;
 `
 
-export const ShopIcon = () => (
-<Container>
-<ShoppingIcon />
-<ItemCountContainer>1</ItemCountContainer>
-</Container>
-)
+export const ShopIcon = () => {
+  const itemCount = useSelector(selectBagItemsCount)
+
+  return (
+    <Container>
+      <ShoppingIcon />
+      <ItemCountContainer>{itemCount}</ItemCountContainer>
+    </Container>
+  )
+}
