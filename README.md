@@ -37,7 +37,7 @@ It correctly bundles React in production mode and optimizes the build to be depl
 
 ## Framework used
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Redux](https://github.com/reduxjs/react-redux), [Styled Components](https://github.com/styled-components/styled-components) and [Moment.js](https://github.com/moment/moment/). 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Redux](https://github.com/reduxjs/react-redux), and [Styled Components](https://github.com/styled-components/styled-components). 
 
 ## API Reference
 
