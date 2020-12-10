@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { selectProductsData } from '../redux/products/products.selectors'
 
-import { ShopItem } from '../component/ShopItem'
+import { ShopItem } from '../components/ShopItem'
 
 const Container = styled.div`
   display: flex;

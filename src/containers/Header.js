@@ -25,7 +25,7 @@ const Logo = styled.img`
 `
 
 const LogoTitle = styled.h1`
-  font-size: 2.5em;
+  font-size: 2.7em;
   font-weight: 700;
   color: rgb(126, 75, 133);
 `

@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import { clearBag, toggleBagHidden } from '../redux/bag/bag.actions'
+import { clearBag, toggleBagHidden } from '../../redux/bag/bag.actions'
 
-import { selectBagTotal } from '../redux/bag/bag.selectors'
+import { selectBagTotal } from '../../redux/bag/bag.selectors'
 
 import { BagItem } from './BagItem'
-import { CustomButton } from './CustomButton'
+import { CustomButton } from '../CustomButton'
 
 const Container = styled.div`
   position: absolute;
@@ -64,10 +64,13 @@ export const BagDropdown = () => {
   const total = useSelector(selectBagTotal)
   const dispatch = useDispatch()
 
-  function handleOrder () {
-    alert('Order Submitted! Thank you for shopping at Kelisto.es')
-    dispatch(clearBag())
-    dispatch(toggleBagHidden())
+  function handleOrder (items) {
+    if (items.length) {
+      alert('Order Submitted! Thank you for shopping at ShopKelisto.es')
+      dispatch(clearBag())
+      dispatch(toggleBagHidden())
+    }
+    return
   }
 
   return (
@@ -86,7 +89,9 @@ export const BagDropdown = () => {
         <span>£{total.toFixed(2)}</span>
       </Total>
       <ButtonsContainer>
-        <PlaceOrder onClick={() => handleOrder()}>place order</PlaceOrder>
+        <PlaceOrder onClick={() => handleOrder(bagItems)}>
+          place order
+        </PlaceOrder>
         <ClearBagButton
           onClick={() => dispatch(clearBag())}
           clearBagButtonStyles
