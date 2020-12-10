@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
-import { selectBagItemsCount } from '../redux/bag/bag.selectors'
+import { selectBagItemsCount } from '../../redux/bag/bag.selectors'
 
-import { ReactComponent as BagIconSVG } from '../data/icon/shopping-bag.svg'
+import { ReactComponent as BagIconSVG } from '../../data/icon/shopping-bag.svg'
 
 const Container = styled.div`
   width: 45px;

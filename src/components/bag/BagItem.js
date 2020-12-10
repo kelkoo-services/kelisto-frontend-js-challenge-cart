@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
-import { removeItem } from '../redux/bag/bag.actions'
+import { removeItem } from '../../redux/bag/bag.actions'
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +9,7 @@ const Container = styled.div`
   height: 100px;
   margin-bottom: 15px;
   align-items: center;
+  flex-shrink: 0;
 
   span {
     font-size: 0.8em;

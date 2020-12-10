@@ -10,16 +10,22 @@ import { CustomButton } from '../CustomButton'
 
 const Container = styled.div`
   position: absolute;
-  width: 230px;
+  width: 240px;
   height: 400px;
   display: flex;
   flex-direction: column;
   padding: 15px;
   border: 1px solid black;
   background-color: white;
-  top: 110px;
+  top: 130px;
   right: 200px;
   z-index: 5;
+
+  @media (max-width: 800px) {
+    right: 20%;
+    left: 20%;
+    top: 100px;
+  }
 `
 
 const BagItemsContainer = styled.div`
