@@ -1,14 +1,17 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+
+import { clearBag, toggleBagHidden } from '../redux/bag/bag.actions'
 
 import { selectBagTotal } from '../redux/bag/bag.selectors'
 
 import { BagItem } from './BagItem'
+import { CustomButton } from './CustomButton'
 
 const Container = styled.div`
   position: absolute;
   width: 230px;
-  height: 330px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -33,8 +36,8 @@ const EmptyCart = styled.span`
 
 const Total = styled.div`
   display: flex;
-  justify-content: flex-start;
-  padding-top: 10px;
+  justify-content: space-between;
+  padding: 10px 0;
 
   span {
     font-size: 1.2em;
@@ -42,9 +45,30 @@ const Total = styled.div`
   }
 `
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+`
+
+const PlaceOrder = styled(CustomButton)`
+  margin-top: 10px;
+`
+
+const ClearBagButton = styled(CustomButton)`
+  margin-top: 10px;
+`
+
 export const BagDropdown = () => {
   const bagItems = useSelector(state => state.bag.bagItems)
   const total = useSelector(selectBagTotal)
+  const dispatch = useDispatch()
+
+  function handleOrder () {
+    alert('Order Submitted! Thank you for shopping at Kelisto.es')
+    dispatch(clearBag())
+    dispatch(toggleBagHidden())
+  }
 
   return (
     <Container>
@@ -58,8 +82,18 @@ export const BagDropdown = () => {
         )}
       </BagItemsContainer>
       <Total>
-        <span>Total: £{total.toFixed(2)}</span>
+        <span>Total:</span>
+        <span>£{total.toFixed(2)}</span>
       </Total>
+      <ButtonsContainer>
+        <PlaceOrder onClick={() => handleOrder()}>place order</PlaceOrder>
+        <ClearBagButton
+          onClick={() => dispatch(clearBag())}
+          clearBagButtonStyles
+        >
+          clear bag
+        </ClearBagButton>
+      </ButtonsContainer>
     </Container>
   )
 }

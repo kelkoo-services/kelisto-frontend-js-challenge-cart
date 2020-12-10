@@ -3,11 +3,19 @@ import { useDispatch } from 'react-redux'
 
 import { addItem } from '../redux/bag/bag.actions'
 
+import { CustomButton } from './CustomButton'
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px;
   background-color: white;
+`
+
+const BackgroundImage = styled.img`
+  width: 130px;
+  height: 150px;
+  margin: auto;
 `
 
 const ImageContainer = styled.div`
@@ -20,18 +28,15 @@ const ImageContainer = styled.div`
   justify-content: center;
 
   :hover {
-    opacity: 0.7;
+    ${BackgroundImage} {
+      opacity: 0.8;
+    }
 
     button {
       display: flex;
+      opacity: 0.85;
     }
   }
-`
-
-const BackgroundImage = styled.img`
-  width: 130px;
-  height: 150px;
-  margin: auto;
 `
 
 const FooterContainer = styled.div`
@@ -43,18 +48,13 @@ const FooterContainer = styled.div`
 
 const Title = styled.span`
   margin: 10px 0 5px 0;
-  font-weight: 400;
+  font-weight: 500;
 `
 
 const Sku = styled.span`
-  display: flex;
-  align-items: center;
   font-weight: 300;
-
-  p {
-    font-weight: 600;
-    margin: 5px 5px 5px 0;
-  }
+  font-style: italic;
+  margin: 5px 5px 5px 0;
 `
 
 const Price = styled.span`
@@ -63,27 +63,13 @@ const Price = styled.span`
   font-weight: 600;
 `
 
-const AddButton = styled.button`
-  width: 60%;
+const AddButton = styled(CustomButton)`
   position: absolute;
   top: 170px;
+  width: 60%;
   height: 2.5rem;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  border: 1px solid black;
-  cursor: pointer;
   display: none;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  color: black;
-  outline: none;
-
-  :hover {
-    background-color: black;
-    color: white;
-    opacity: 0.85;
-  }
+  opacity: 0.7;
 `
 
 export const ShopItem = ({ item }) => {
@@ -94,15 +80,13 @@ export const ShopItem = ({ item }) => {
     <Container>
       <ImageContainer>
         <BackgroundImage src={image} alt='product-image' />
-        <AddButton onClick={() => dispatch(addItem(item))}>
+        <AddButton onClick={() => dispatch(addItem(item))} inverted>
           add to bag
         </AddButton>
       </ImageContainer>
       <FooterContainer>
         <Title>{title}</Title>
-        <Sku>
-          <p>SKU:</p> {sku}
-        </Sku>
+        <Sku>SKU: {sku}</Sku>
         <Price>£{price}</Price>
       </FooterContainer>
     </Container>
