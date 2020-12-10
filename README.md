@@ -1,67 +1,58 @@
-<h1 align="center">Frontend JS Challenge</h1>
-<div align="center">
-  <a style="margin-right: 8px;" href="https://github.com/kelkoo-services/kelisto-frontend-js-challenge/pulls">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
-  </a>
-</div>
+## Kelisto Js Challenge
 
-## ✨ Introduction
+https://diegodinizz.github.io/kelisto-frontend-js-challenge/
 
-Welcome to the coding challenge for developers interested in **frontend** roles in Kelisto. It's not an against-the-clock time challenge - you can complete it at home in your own time.
-
-Ideally you will return your submission in __within 2 days__ - the sooner you get your submission back to us, the more quickly we can progress your application to interview stage.
-
-## Exercise
-
-In this exercise you will develop a product listing page and shopping basket. Your solution should:
+The Kelisto JS Challenge is an application built with React, Redux, Styled Components, and hosted on GitHub Pages. The application must display a product listing page and shopping basket. The solution should:
 
 - Be a website, using React.
 - Consume a JSON feed of products (see below) and display them on a page.
 - Allow users to add a product to their basket.
 - Allow users to view the products in their basket.
 
-## Wireframes
+<img width="1680" alt="Screenshot 2020-12-10 at 16 40 04" src="https://user-images.githubusercontent.com/47988806/101801822-aa6c5100-3b06-11eb-8929-5e5e02120894.png">
 
-The following wireframes show a high-level example of the application. You're free to change this as you like.
+## Installation
 
-![Wireframes](./docs/wireframes.png)
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
-## Product API
+#### Installation:
+
+`npm install`
+
+#### Start Server:
+
+`npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+#### Production:
+
+`npm run deploy`
+
+It correctly bundles React in production mode and optimizes the build to be deployed on Gh Pages.
+
+## Framework used
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Redux](https://github.com/reduxjs/react-redux), [Styled Components](https://github.com/styled-components/styled-components) and [Moment.js](https://github.com/moment/moment/). 
+
+## API Reference
 
 Please fetch the products to be displayed as JSON from this URL: [./data/products.json](./data/products.json).
 
-## Tools, libraries and frameworks
+## Hosted
 
-Please build your solution as a website with React, as this is the library we use in most of our front end products.
+The project is hosted on [Gh Pages](https://pages.github.com) at https://diegodinizz.github.io/spacex-launches/
 
-Other than React, the choice of libraries, frameworks or tools used to develop the application is left open to you. We encourage you to use options you're familiar with, and that you'd feel comfortable explaining the choices you make with them.
+## Reflection
 
-Your application will be reviewed on an up-to-date version of Chrome, but you're free to include compatability for other browsers to enhance your application.
+This was a two days-long project built as a short technical exercise. Project goal included is to create a React application that will consume data from the JSON products file provided.
 
-As part of the interview process, our engineers will review your code as well as your application. Please ensure the code you write can be shared with our team, for example through a GitHub or Bitbucket repository, or as a compressed folder.
+Originally I wanted to build an application that allowed users to see list of products and then added them to the shopping bag. I started this process by using the `create-react-app` boilerplate, then adding `Redux` to manage the state flow in the App, and `styled-components` to write actual CSS code to style the components.
 
-## 💯 Assessment
+One of the main challenges I ran into was to pull the information from the JSON file. This leads me to spend a few hours planning a better way to display the information coming from the JSON file. Due to project time constraints, I had to decide a simplified design to demonstrate a better visualisation of the pieces of information that I had available.
 
-We will assess your application based on the following criteria:
-
-- How clean, modular and extensible the code is.
-- Testing.
-- Suitability of tools, libraries and frameworks used (for both the app itself and any build processes involved).
-- How it looks visually and the techniques used to style the application.
-- Responsive web design techniques used and the approach used for layout.
-- Anything above and beyond e.g. accessibility, animation, routing.
-
-## 🚀 Project submitting
-
-To send us your code, you can:
-
-- Make a fork of this repository, and send us a pull-request;
-- or give access to your repository in Github/Bitbucket.
-
-## 🤘 What’s next?
-
-We appreciate your time is important. Once you submit your solution, our team will review your code challenge, taking your experience level into account. The sample code provided by you should be in a state considered as a "production" ready. Therefore, if you feel your unfinished code demonstrates enough for us to assess the application please leave some notes in your `README.md` explaining what you would do next given more time.
-
-Good luck!
-
-**“The Challenge” has been created with the sole intention of being used as a guiding document for the current recruitment process. This means we won't be using it (all or parts of it) within our projects.**
+At the end of the day, the technologies implemented in this project are React, Redux, Styled Components, and Gh Pages to deploy it. I choose to use as fewer frameworks as possible to minimize initial setup and invest more time in diving into weird technological rabbit holes. In the next iteration with more time, I would like to implement a more detail visualisation of the products, type safety method and possibly unit tests.
