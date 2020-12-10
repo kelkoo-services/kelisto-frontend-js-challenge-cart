@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { toggleBagHidden } from '../redux/bag/bag.actions'
 
 import { BagDropdown } from '../component/BagDropdown'
-import { ShopIcon } from '../component/ShopIcon'
+import { BagIcon } from '../component/BagIcon'
 
-import logo from '../data/assets/kelisto-logo.png'
+import logo from '../data/logo/kelisto-logo.png'
 
 const Container = styled.div`
   display: flex;
@@ -52,7 +52,7 @@ export const Header = () => {
         <Logo src={logo} alt='logo' />
       </LogoContainer>
       <ShopContainer onClick={() => dispatch(toggleBagHidden())}>
-        <ShopIcon />
+        <BagIcon />
         <ShoppingTitle>Shopping bag</ShoppingTitle>
       </ShopContainer>
       {hidden ? null : <BagDropdown />}

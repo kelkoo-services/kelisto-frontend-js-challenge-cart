@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+
+import { selectProductsData } from '../redux/products/products.selectors'
 
 import { ShopItem } from '../component/ShopItem'
 
@@ -9,10 +12,12 @@ const Container = styled.div`
   justify-content: center;
 `
 
-export const ShopList = ({ list }) => {
+export const ShopList = () => {
+  const products = useSelector(selectProductsData)
+
   return (
     <Container>
-      {list.map(item => (
+      {products.map(item => (
         <ShopItem key={item.productId} item={item} />
       ))}
     </Container>

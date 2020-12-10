@@ -28,12 +28,10 @@ const ImageContainer = styled.div`
   }
 `
 
-const BackgroundImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(${({ img }) => img});
+const BackgroundImage = styled.img`
+  width: 130px;
+  height: 150px;
+  margin: auto;
 `
 
 const FooterContainer = styled.div`
@@ -95,7 +93,7 @@ export const ShopItem = ({ item }) => {
   return (
     <Container>
       <ImageContainer>
-        <BackgroundImage img={image} />
+        <BackgroundImage src={image} alt='product-image' />
         <AddButton onClick={() => dispatch(addItem(item))}>
           add to bag
         </AddButton>
