@@ -45,7 +45,7 @@ Please fetch the products to be displayed as JSON from this URL: [./data/product
 
 ## Hosted
 
-The project is hosted on [Gh Pages](https://pages.github.com) at https://diegodinizz.github.io/spacex-launches/
+The project is hosted on [Gh Pages](https://pages.github.com) at https://diegodinizz.github.io/kelisto-frontend-js-challenge/
 
 ## Reflection
 
