@@ -6,8 +6,3 @@ export const selectProductsData = createSelector(
   [selectProducts],
   data => data.products
 )
-
-// export const selectProductsDataForPreview = createSelector(
-//   [selectProductsData],
-//   data => Object.keys(data).map(key => data[key])
-// );
