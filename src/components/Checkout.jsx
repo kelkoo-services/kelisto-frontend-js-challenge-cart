@@ -49,7 +49,6 @@ function Checkout() {
       <StyledItemList>
         {basket.map((item, index) => (
           <StyledItem key={index}>
-            {console.log(item)}
             <div>
               {item.item} : £{item.price}
             </div>
